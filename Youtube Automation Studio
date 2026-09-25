@@ -1,0 +1,873 @@
+I want to build a complete AI-powered YouTube Automation Agent web application.
+
+IMPORTANT:
+- Do not just explain the code.
+- Create and implement the complete working application directly in this repository.
+- Create all required files, folders, components, APIs and configuration.
+- Make the UI modern, responsive and mobile-friendly.
+- The application must support Hindi as the primary video language.
+- Use environment variables for all API keys and secrets.
+- NEVER hardcode API keys or OAuth secrets.
+
+PROJECT NAME:
+YouTube Automation Studio
+
+MAIN GOAL:
+I have a YouTube channel and want an automation system that can automatically:
+1. Find video topics/ideas.
+2. Generate a video idea.
+3. Research the topic.
+4. Generate a Hindi script.
+5. Generate a natural Hindi voiceover.
+6. Collect/generate suitable visuals.
+7. Create and render the complete video.
+8. Generate thumbnail.
+9. Generate YouTube title, description and tags.
+10. Upload the video to YouTube.
+11. Schedule the video for publication.
+12. Keep a history of generated videos.
+13. Run the workflow automatically on a schedule.
+
+IMPORTANT AUTOMATION FLOW:
+
+AI Topic Research
+        ↓
+Video Idea
+        ↓
+Topic Research
+        ↓
+Hindi Script
+        ↓
+Hindi Voiceover
+        ↓
+Visual Generation / Media Collection
+        ↓
+Video Assembly
+        ↓
+Thumbnail
+        ↓
+Title + Description + Tags
+        ↓
+Quality Check
+        ↓
+YouTube Upload
+        ↓
+Schedule Publication
+        ↓
+History / Analytics
+
+====================================
+1. DASHBOARD
+====================================
+
+Create a professional dashboard with:
+
+- Overview
+- AI Ideas
+- Script Generator
+- Voiceover
+- Video Production
+- Thumbnail
+- YouTube
+- Scheduler
+- Video History
+- Automation Settings
+- API Settings
+
+Dashboard should display:
+
+- Automation status
+- Next scheduled video
+- Videos generated
+- Videos scheduled
+- Videos uploaded
+- Current running job
+- Recent videos
+- Failed jobs
+- Last automation run
+
+Use cards, progress indicators and clean modern UI.
+
+====================================
+2. CHANNEL SETUP
+====================================
+
+Create a Channel Setup page.
+
+Fields:
+
+- YouTube Channel Name
+- Channel URL
+- Channel Topic/Niche
+- Target Audience
+- Default Video Language
+- Default Video Duration
+- Upload Frequency
+- Preferred Upload Time
+- Time Zone
+
+Default language should be:
+
+Hindi
+
+Allow user to select:
+
+- Hindi
+- English
+- Hinglish
+
+====================================
+3. AI VIDEO IDEA GENERATOR
+====================================
+
+Create an AI Ideas page.
+
+The AI should generate video ideas based on:
+
+- Channel niche
+- Target audience
+- Current trends
+- Search topics
+- Previous videos
+- User-defined keywords
+
+Each idea should show:
+
+- Title
+- Short description
+- Why this topic is useful
+- Suggested video length
+- Suggested format
+- Estimated difficulty
+- Suggested thumbnail concept
+
+Buttons:
+
+- Generate Ideas
+- Regenerate
+- Use This Idea
+- Save Idea
+- Delete Idea
+
+Do not automatically publish an idea without completing the required workflow.
+
+====================================
+4. TOPIC RESEARCH
+====================================
+
+When an idea is selected, automatically research the topic.
+
+Create a research panel containing:
+
+- Key facts
+- Important points
+- Relevant sources
+- Recent information
+- Suggested structure
+- Important warnings/uncertainties
+
+Do not invent factual claims.
+
+Keep sources associated with the research result so they can be reviewed later.
+
+====================================
+5. HINDI SCRIPT GENERATOR
+====================================
+
+Generate a complete YouTube script in natural Hindi.
+
+IMPORTANT:
+
+The script must sound like a real Hindi YouTube creator speaking.
+
+Avoid robotic translation.
+
+Use:
+
+- Natural Hindi
+- Short spoken sentences
+- Good storytelling
+- Hook at beginning
+- Introduction
+- Main content
+- Examples where useful
+- Smooth transitions
+- Conclusion
+- Call to action
+
+Allow script styles:
+
+- Informative
+- Storytelling
+- Documentary
+- Educational
+- News-style
+- Explainer
+- Mystery
+- Facts
+- Top 10
+- Shorts
+
+Allow duration:
+
+- 1 minute
+- 3 minutes
+- 5 minutes
+- 8 minutes
+- 10 minutes
+- 15 minutes
+- Custom
+
+Show generated script before video production.
+
+Buttons:
+
+- Generate Script
+- Regenerate
+- Edit Script
+- Approve Script
+
+====================================
+6. HINDI AI VOICEOVER
+====================================
+
+This is extremely important.
+
+Create a Hindi Voiceover system.
+
+The voiceover must support:
+
+- Natural Hindi pronunciation
+- Male voice
+- Female voice
+- Different voice styles
+- Adjustable speaking speed
+- Adjustable pitch where supported
+- Pauses
+- Sentence-level audio generation
+
+Settings:
+
+Language:
+Hindi
+
+Voice:
+Male / Female
+
+Speed:
+0.8x - 1.2x
+
+Style:
+Natural / Documentary / Storytelling / Energetic / Calm
+
+The system should generate an audio file for the approved Hindi script.
+
+Show:
+
+- Audio player
+- Duration
+- Voice name
+- Regenerate button
+- Download button
+
+Do not generate the final video until the voiceover is successfully generated.
+
+Create a provider abstraction so the TTS provider can be changed later.
+
+Example architecture:
+
+TTS Provider
+  ├── Provider A
+  ├── Provider B
+  └── Future Providers
+
+API keys must be stored only in environment variables.
+
+====================================
+7. VISUAL GENERATION
+====================================
+
+Create a visual planning system.
+
+For every section of the script, automatically create:
+
+- Scene description
+- Image/video requirement
+- Suggested duration
+- On-screen text
+- Transition
+
+Support:
+
+- AI-generated images
+- Stock media APIs
+- User-uploaded media
+
+Do not use copyrighted media illegally.
+
+Store source/attribution information where required.
+
+====================================
+8. VIDEO CREATION
+====================================
+
+Create a video production pipeline.
+
+Inputs:
+
+- Hindi voiceover
+- Script
+- Images/videos
+- Background music
+- Captions
+
+Automatically:
+
+- Arrange scenes
+- Match visuals to narration
+- Add transitions
+- Add subtitles
+- Add background music
+- Normalize audio
+- Render MP4
+
+Create a production progress UI:
+
+Research
+✓
+
+Script
+✓
+
+Voiceover
+✓
+
+Visuals
+✓
+
+Editing
+→
+
+Rendering
+○
+
+Thumbnail
+○
+
+YouTube Upload
+○
+
+Scheduling
+○
+
+The user must be able to see which stage is running.
+
+====================================
+9. HINDI SUBTITLES
+====================================
+
+Automatically generate Hindi subtitles from the approved script/voiceover.
+
+Support:
+
+- SRT
+- WebVTT
+- Burned-in subtitles
+
+Allow:
+
+- Subtitle font size
+- Position
+- Style
+
+====================================
+10. THUMBNAIL GENERATOR
+====================================
+
+Automatically generate a thumbnail concept based on the video.
+
+Thumbnail should contain:
+
+- Main subject
+- Short Hindi text
+- Strong visual hierarchy
+- 16:9 format
+
+Allow user to:
+
+- Generate
+- Regenerate
+- Upload custom thumbnail
+- Preview
+
+Do not use misleading thumbnails.
+
+====================================
+11. YOUTUBE METADATA
+====================================
+
+Automatically generate:
+
+- YouTube title
+- Description
+- Tags
+- Hashtags
+- Category suggestion
+
+Title and description should match the actual video content.
+
+Generate metadata in Hindi when Hindi is selected.
+
+Allow user to edit everything before upload.
+
+====================================
+12. YOUTUBE OAUTH
+====================================
+
+Create a secure YouTube connection page.
+
+User should be able to:
+
+- Connect YouTube
+- View connected channel
+- Disconnect YouTube
+- Refresh authorization
+
+Use official YouTube OAuth 2.0.
+
+Never ask the user to paste their YouTube password.
+
+Never expose OAuth client secrets in frontend code.
+
+Store tokens securely on the server.
+
+Use the appropriate YouTube API scopes required for uploading videos.
+
+====================================
+13. YOUTUBE UPLOAD
+====================================
+
+After the video is ready:
+
+Upload the rendered MP4 to the user's connected YouTube channel.
+
+Before upload show:
+
+Title
+Description
+Thumbnail
+Visibility
+Scheduled date/time
+
+Support:
+
+- Private
+- Unlisted
+- Public
+- Scheduled publication
+
+For scheduled videos:
+
+- Upload as private
+- Set the requested publication time using the supported YouTube API mechanism
+- Store the YouTube video ID
+- Store scheduled date/time
+- Show status in dashboard
+
+Handle YouTube API errors gracefully.
+
+====================================
+14. AUTOMATIC SCHEDULER
+====================================
+
+Create an automation scheduler.
+
+Example:
+
+Every day at 7:00 PM
+→ Research topic
+→ Generate idea
+→ Generate Hindi script
+→ Generate Hindi voice
+→ Generate visuals
+→ Render video
+→ Generate thumbnail
+→ Generate metadata
+→ Upload
+→ Schedule
+
+Allow:
+
+- Daily
+- Every 2 days
+- Weekly
+- Custom schedule
+
+Also allow:
+
+- Pause automation
+- Resume automation
+- Run now
+- Cancel current job
+
+IMPORTANT:
+The scheduler must use a reliable server-side/background job mechanism.
+
+Do not depend on the browser tab remaining open.
+
+====================================
+15. HUMAN APPROVAL MODE
+====================================
+
+Create two modes.
+
+MODE 1:
+Approval Mode
+
+AI prepares:
+
+Idea
+→ Script
+→ Voice
+→ Video
+→ Metadata
+
+Then waits for user approval before YouTube upload.
+
+MODE 2:
+Automatic Mode
+
+After the user explicitly enables automatic mode, the system can continue through upload/scheduling according to the configured workflow.
+
+Show a clear automation status.
+
+====================================
+16. VIDEO HISTORY
+====================================
+
+Create Video History.
+
+Each video should show:
+
+- Thumbnail
+- Title
+- Status
+- Created date
+- Upload date
+- Scheduled date
+- YouTube URL
+- YouTube video ID
+- Script
+- Voiceover
+- Rendered video
+- Error logs
+
+Statuses:
+
+Draft
+Researching
+Script Generated
+Voice Generated
+Producing
+Rendered
+Ready
+Uploading
+Scheduled
+Published
+Failed
+
+====================================
+17. AUTOMATION LOGS
+====================================
+
+Create detailed logs.
+
+Example:
+
+[10:00] Automation started
+[10:01] Topic research started
+[10:02] Idea generated
+[10:03] Hindi script generated
+[10:04] Hindi voiceover generated
+[10:08] Visuals prepared
+[10:15] Video rendered
+[10:16] Thumbnail generated
+[10:17] YouTube upload started
+[10:18] Video scheduled
+
+Errors should clearly explain what went wrong.
+
+====================================
+18. SETTINGS
+====================================
+
+Create settings for:
+
+Channel
+Language
+Voice
+Video duration
+Upload frequency
+Upload time
+Timezone
+Automation mode
+TTS provider
+AI provider
+Media provider
+YouTube connection
+
+API keys should be configured through environment variables/server-side secrets.
+
+Never expose secret keys in the browser.
+
+====================================
+19. MOBILE-FRIENDLY UI
+====================================
+
+The entire dashboard must work properly on Android/mobile browsers.
+
+Use:
+
+- Responsive layout
+- Mobile navigation
+- Large buttons
+- Touch-friendly controls
+- Responsive video preview
+- Responsive tables/cards
+
+====================================
+20. SECURITY
+====================================
+
+Implement:
+
+- Environment variables
+- Secure OAuth handling
+- Server-side API calls where secrets are required
+- Input validation
+- Authentication-ready architecture
+- No API keys in frontend
+- No OAuth secrets in GitHub
+- Proper error handling
+
+Create a `.env.example` file containing placeholders only.
+
+Example:
+
+AI_API_KEY=
+TTS_API_KEY=
+YOUTUBE_CLIENT_ID=
+YOUTUBE_CLIENT_SECRET=
+MEDIA_API_KEY=
+
+Do NOT put real keys in the repository.
+
+====================================
+21. TECHNICAL ARCHITECTURE
+====================================
+
+Use a clean modular architecture.
+
+Suggested structure:
+
+/app
+/components
+/pages
+/api
+/services
+/services/ai
+/services/tts
+/services/youtube
+/services/media
+/services/video
+/services/scheduler
+/workers
+/database
+/utils
+/types
+/public
+
+Separate:
+
+Frontend
+Backend
+AI services
+TTS
+Video rendering
+YouTube API
+Scheduler
+Database
+
+Create reusable services.
+
+====================================
+22. VIDEO RENDERING
+====================================
+
+Use a reliable server-side video rendering approach.
+
+The rendering service should combine:
+
+- MP4/image visuals
+- Hindi voiceover
+- Background music
+- Hindi subtitles
+- Transitions
+
+Output:
+
+MP4
+
+Use a job queue/background worker architecture so long-running video generation does not block normal web requests.
+
+====================================
+23. ERROR HANDLING
+====================================
+
+Every automation step must handle errors.
+
+If voice generation fails:
+
+Retry → show error → allow manual retry.
+
+If video rendering fails:
+
+Keep previous completed stages → retry rendering.
+
+If YouTube upload fails:
+
+Keep rendered video → show error → allow retry.
+
+Do not restart the entire workflow unnecessarily.
+
+====================================
+24. DATABASE
+====================================
+
+Create database models for:
+
+User
+Channel
+VideoProject
+VideoIdea
+Research
+Script
+Voiceover
+Scene
+RenderedVideo
+Thumbnail
+YouTubeUpload
+Schedule
+AutomationJob
+AutomationLog
+Settings
+
+Use proper relationships.
+
+====================================
+25. DEMO / DEVELOPMENT MODE
+====================================
+
+Create a development/demo mode so the UI can be tested without real API keys.
+
+Demo mode should simulate:
+
+Idea generation
+Script generation
+Voice generation
+Video production
+Thumbnail generation
+YouTube upload
+Scheduling
+
+Clearly label simulated/demo results.
+
+Never pretend that a demo upload actually happened on YouTube.
+
+====================================
+26. README
+====================================
+
+Create a complete README.md explaining:
+
+- What the project does
+- Architecture
+- Installation
+- Environment variables
+- Local development
+- AI provider setup
+- Hindi TTS setup
+- YouTube OAuth setup
+- YouTube API setup
+- Database setup
+- Scheduler setup
+- Video rendering setup
+- Production deployment
+- Troubleshooting
+
+====================================
+27. IMPORTANT IMPLEMENTATION RULE
+====================================
+
+Do not create only a visual mockup.
+
+Implement actual working backend routes/services where possible.
+
+If an external API requires credentials that are not available, implement the integration with environment-variable configuration and a clear setup guide.
+
+Do not invent API responses.
+
+Do not claim that a video was uploaded or scheduled unless the real YouTube API confirms it.
+
+====================================
+28. FINAL RESULT
+====================================
+
+The final application should allow this workflow:
+
+User connects YouTube
+        ↓
+Sets channel niche
+        ↓
+Selects Hindi
+        ↓
+Selects Hindi voice
+        ↓
+Sets upload schedule
+        ↓
+Enables automation
+        ↓
+AI researches topics
+        ↓
+AI selects/generates video idea
+        ↓
+AI writes Hindi script
+        ↓
+Hindi AI voiceover generated
+        ↓
+Visuals prepared
+        ↓
+Video rendered
+        ↓
+Hindi subtitles added
+        ↓
+Thumbnail generated
+        ↓
+Hindi title + description + tags generated
+        ↓
+Video uploaded to YouTube
+        ↓
+Video scheduled
+        ↓
+Dashboard records everything
+        ↓
+Next video automation begins
+
+BUILD THE COMPLETE PROJECT NOW.
+
+Create all required files.
+Implement the application.
+Make the UI polished and mobile responsive.
+Do not only give instructions.
+Do not ask me to manually create every file.
+Commit the implementation to the current repository/main branch when the repository workflow allows it.
